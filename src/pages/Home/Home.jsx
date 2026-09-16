@@ -1,12 +1,19 @@
 import { Link } from "react-router";
 
+import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
+import artworks from "../../data/artworks";
+
 import "./Home.css";
 
 function Home() {
+    const featuredArtwork = artworks[0];
+
     return (
         <main className="home">
+
             <section className="hero">
                 <div className="container hero-container">
+
                     <div className="hero-content">
                         <p className="hero-eyebrow">
                             Digital Art Collection
@@ -31,25 +38,43 @@ function Home() {
                         </Link>
                     </div>
 
-                    <div className="hero-artwork">
-                        <div className="hero-image-placeholder">
-                            <span>Featured Artwork</span>
+
+                    <Link
+                        to={`/artwork/${featuredArtwork.id}`}
+                        className="hero-artwork"
+                    >
+                        <div className="hero-image-container">
+                            <img
+                                src={featuredArtwork.image}
+                                alt={featuredArtwork.title}
+                                className="hero-image"
+                            />
                         </div>
 
                         <div className="hero-artwork-info">
                             <div>
-                                <h2>The Starry Night</h2>
-                                <p>Vincent van Gogh</p>
+                                <h2>
+                                    {featuredArtwork.title}
+                                </h2>
+
+                                <p>
+                                    {featuredArtwork.artist}
+                                </p>
                             </div>
 
-                            <span>1889</span>
+                            <span>
+                                {featuredArtwork.year}
+                            </span>
                         </div>
-                    </div>
+                    </Link>
+
                 </div>
             </section>
 
+
             <section className="featured section">
                 <div className="container">
+
                     <div className="featured-header">
                         <div>
                             <p className="section-label">
@@ -69,39 +94,19 @@ function Home() {
                         </Link>
                     </div>
 
+
                     <div className="featured-grid">
-                        <article className="artwork-card">
-                            <div className="artwork-placeholder artwork-tall">
-                                Artwork
-                            </div>
-
-                            <h3>The Great Wave</h3>
-                            <p>Katsushika Hokusai</p>
-                            <span>1831</span>
-                        </article>
-
-                        <article className="artwork-card">
-                            <div className="artwork-placeholder">
-                                Artwork
-                            </div>
-
-                            <h3>Water Lilies</h3>
-                            <p>Claude Monet</p>
-                            <span>1906</span>
-                        </article>
-
-                        <article className="artwork-card">
-                            <div className="artwork-placeholder artwork-tall">
-                                Artwork
-                            </div>
-
-                            <h3>Girl with a Pearl Earring</h3>
-                            <p>Johannes Vermeer</p>
-                            <span>1665</span>
-                        </article>
+                        {artworks.map((artwork) => (
+                            <ArtworkCard
+                                key={artwork.id}
+                                artwork={artwork}
+                            />
+                        ))}
                     </div>
+
                 </div>
             </section>
+
         </main>
     );
 }
