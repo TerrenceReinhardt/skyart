@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router";
 
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+
 import Home from "./pages/Home/Home";
 import Explore from "./pages/Explore/Explore";
 import Artwork from "./pages/Artwork/Artwork";
@@ -11,41 +14,22 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
+        <>
+            <Navbar />
 
-            <Route path="/explore" element={<Explore />} />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/explore" element={<Explore />} />
+                <Route path="/artwork/:id" element={<Artwork />} />
+                <Route path="/artists" element={<Artists />} />
+                <Route path="/artist/:id" element={<ArtistDetail />} />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
 
-            <Route
-                path="/artwork/:id"
-                element={<Artwork />}
-            />
-
-            <Route
-                path="/artists"
-                element={<Artists />}
-            />
-
-            <Route
-                path="/artist/:id"
-                element={<ArtistDetail />}
-            />
-
-            <Route
-                path="/favorites"
-                element={<Favorites />}
-            />
-
-            <Route
-                path="/about"
-                element={<About />}
-            />
-
-            <Route
-                path="*"
-                element={<NotFound />}
-            />
-        </Routes>
+            <Footer />
+        </>
     );
 }
 

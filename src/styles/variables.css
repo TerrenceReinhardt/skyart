@@ -1,0 +1,18 @@
+:root {
+    --color-background: #f4f1ea;
+    --color-surface: #ebe7de;
+
+    --color-text: #181816;
+    --color-text-secondary: #74716a;
+
+    --color-accent: #7d2636;
+    --color-border: #d8d3c9;
+
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", Arial, sans-serif;
+
+    --container-width: 1400px;
+    --page-padding: 48px;
+
+    --transition: 0.3s ease;
+}

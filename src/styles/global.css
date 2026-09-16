@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -26,4 +28,51 @@ a {
 button,
 input {
     font: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.container {
+    width: min(
+        calc(100% - (var(--page-padding) * 2)),
+        var(--container-width)
+    );
+
+    margin-inline: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-label {
+    margin-bottom: 16px;
+
+    color: var(--color-accent);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: 0.95;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --page-padding: 24px;
+    }
+
+    .section {
+        padding: 72px 0;
+    }
 }
