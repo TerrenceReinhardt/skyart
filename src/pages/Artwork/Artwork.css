@@ -1,0 +1,230 @@
+.artwork-detail {
+    min-height: calc(100vh - 80px);
+    padding: 64px 0 120px;
+}
+
+.artwork-back {
+    display: inline-block;
+
+    margin-bottom: 48px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    transition: color var(--transition);
+}
+
+.artwork-back:hover {
+    color: var(--color-accent);
+}
+
+.artwork-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+
+    align-items: start;
+
+    gap: 100px;
+}
+
+.artwork-detail-visual {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 48px;
+
+    background: var(--color-surface);
+}
+
+.artwork-detail-visual img {
+    width: 100%;
+    max-height: 720px;
+
+    object-fit: contain;
+}
+
+.artwork-detail-content {
+    position: sticky;
+    top: 130px;
+
+    padding-top: 20px;
+}
+
+.artwork-detail-title {
+    max-width: 600px;
+
+    margin-bottom: 18px;
+
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+}
+
+.artwork-detail-artist {
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+}
+
+.artwork-metadata {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    margin: 48px 0;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.artwork-metadata div {
+    padding: 20px 16px 20px 0;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.artwork-metadata div:nth-child(odd) {
+    border-right: 1px solid var(--color-border);
+}
+
+.artwork-metadata div:nth-child(even) {
+    padding-left: 20px;
+}
+
+.artwork-metadata span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.artwork-metadata p {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+}
+
+.artwork-description {
+    margin-bottom: 40px;
+}
+
+.artwork-description-label {
+    margin-bottom: 12px;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.artwork-description > p:last-child {
+    color: var(--color-text-secondary);
+
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+.favorite-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 22px;
+
+    border: 1px solid var(--color-text);
+
+    color: var(--color-text);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.favorite-button span {
+    font-size: 1.2rem;
+}
+
+.favorite-button:hover {
+    background: var(--color-text);
+    color: var(--color-background);
+}
+
+.artwork-not-found {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.artwork-not-found h1 {
+    margin-bottom: 24px;
+
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 500;
+}
+
+.artwork-not-found a {
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid var(--color-text);
+}
+
+@media (max-width: 1000px) {
+    .artwork-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .artwork-detail-content {
+        position: static;
+        padding-top: 0;
+    }
+
+    .artwork-detail-visual {
+        padding: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .artwork-detail {
+        padding-top: 40px;
+    }
+
+    .artwork-back {
+        margin-bottom: 32px;
+    }
+
+    .artwork-detail-visual {
+        padding: 20px;
+    }
+
+    .artwork-metadata {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-metadata div:nth-child(odd) {
+        border-right: none;
+    }
+
+    .artwork-metadata div:nth-child(even) {
+        padding-left: 0;
+    }
+}
