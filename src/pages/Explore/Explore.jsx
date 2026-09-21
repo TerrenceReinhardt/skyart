@@ -104,6 +104,7 @@ function Explore() {
                                 onChange={(event) =>
                                     setSearchTerm(event.target.value)
                                 }
+                                autoComplete="off"
                             />
                         </div>
 
@@ -165,7 +166,7 @@ function Explore() {
                     </div>
 
 
-                    <div className="explore-results-header">
+                    <div className="explore-results-header" aria-live="polite">
                         <p>
                             <strong>
                                 {filteredArtworks.length}

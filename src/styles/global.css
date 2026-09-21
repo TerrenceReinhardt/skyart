@@ -36,6 +36,25 @@ button {
     cursor: pointer;
 }
 
+button,
+a,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
 .container {
     width: min(
         calc(100% - (var(--page-padding) * 2)),
