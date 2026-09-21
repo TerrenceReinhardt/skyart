@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router";
+import { useFavorites } from "../../context/FavoritesContext";
 
 import artworks from "../../data/artworks";
 
@@ -10,6 +11,15 @@ function Artwork() {
     const artwork = artworks.find(
         (item) => item.id === Number(id)
     );
+
+    const {
+        toggleFavorite,
+        isFavorite,
+    } = useFavorites();
+
+    const favorite = artwork
+        ? isFavorite(artwork.id)
+        : false;
 
     if (!artwork) {
         return (
@@ -107,10 +117,18 @@ function Artwork() {
 
                             <button
                                 type="button"
-                                className="favorite-button"
+                                className={`favorite-button ${
+                                    favorite ? "favorite-button-active" : ""
+                                }`}
+                                onClick={() => toggleFavorite(artwork)}
                             >
-                                <span>♡</span>
-                                Add to favorites
+                                <span>
+                                    {favorite ? "♥" : "♡"}
+                                </span>
+
+                                {favorite
+                                    ? "Saved to favorites"
+                                    : "Add to favorites"}
                             </button>
 
                         </div>

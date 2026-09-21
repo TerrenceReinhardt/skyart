@@ -166,6 +166,17 @@
     color: var(--color-background);
 }
 
+.favorite-button-active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.favorite-button-active:hover {
+    background: transparent;
+    color: var(--color-accent);
+}
+
 .artwork-not-found {
     min-height: 70vh;
 
