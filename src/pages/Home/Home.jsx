@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useEffect } from "react";
 
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import artworks from "../../data/artworks";
@@ -7,6 +8,9 @@ import "./Home.css";
 
 function Home() {
     const featuredArtwork = artworks[0];
+    useEffect(() => {
+        document.title = "SkyArt | Digital Art Collection";
+    }, []);
 
     return (
         <main className="home">

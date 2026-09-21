@@ -1,11 +1,14 @@
 import { Link } from "react-router";
-
+import { useEffect } from "react";
 import artworks from "../../data/artworks";
 import artists from "../../data/artists";
 
 import "./About.css";
 
 function About() {
+    useEffect(() => {
+        document.title = "About | SkyArt";
+    }, []);
     return (
         <main className="about-page">
 

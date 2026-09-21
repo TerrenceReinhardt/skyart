@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-
+import { useEffect } from "react";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import { useFavorites } from "../../context/FavoritesContext";
 
@@ -7,7 +7,9 @@ import "./Favorites.css";
 
 function Favorites() {
     const { favorites } = useFavorites();
-
+    useEffect(() => {
+        document.title = "Favorites | SkyArt";
+    }, []);
     return (
         <main className="favorites-page">
 

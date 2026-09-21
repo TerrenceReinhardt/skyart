@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router";
 import { useFavorites } from "../../context/FavoritesContext";
-
+import { useEffect } from "react";
 import artworks from "../../data/artworks";
 
 import "./Artwork.css";
@@ -11,6 +11,14 @@ function Artwork() {
     const artwork = artworks.find(
         (item) => item.id === Number(id)
     );
+
+    useEffect(() => {
+        if (artwork) {
+            document.title = `${artwork.title} | SkyArt`;
+        } else {
+            document.title = "Artwork Not Found | SkyArt";
+        }
+    }, [artwork]);
 
     const {
         toggleFavorite,

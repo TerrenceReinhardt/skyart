@@ -1,9 +1,14 @@
+import { useEffect } from "react";
+
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import artists from "../../data/artists";
 
 import "./Artists.css";
 
 function Artists() {
+    useEffect(() => {
+        document.title = "Explore | SkyArt";
+    }, []);
     return (
         <main className="artists-page">
 

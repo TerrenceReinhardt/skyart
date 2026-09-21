@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-
+import { useEffect } from "react";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import artists from "../../data/artists";
 import artworks from "../../data/artworks";
@@ -12,6 +12,14 @@ function ArtistDetail() {
     const artist = artists.find(
         (item) => item.id === Number(id)
     );
+
+    useEffect(() => {
+        if (artist) {
+            document.title = `${artist.name} | SkyArt`;
+        } else {
+            document.title = "Artist Not Found | SkyArt";
+        }
+    }, [artist]);
 
     if (!artist) {
         return (

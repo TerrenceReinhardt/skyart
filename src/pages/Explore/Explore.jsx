@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
 import artworks from "../../data/artworks";
@@ -9,6 +9,10 @@ function Explore() {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedMovement, setSelectedMovement] = useState("All");
     const [sortOrder, setSortOrder] = useState("default");
+
+    useEffect(() => {
+        document.title = "Explore | SkyArt";
+    }, []);
 
     const movements = [
         "All",
