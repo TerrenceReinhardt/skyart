@@ -96,7 +96,7 @@ function Home() {
 
 
                     <div className="featured-grid">
-                        {artworks.map((artwork) => (
+                        {artworks.slice(0, 6).map((artwork) => (
                             <ArtworkCard
                                 key={artwork.id}
                                 artwork={artwork}
