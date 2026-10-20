@@ -12,7 +12,7 @@ function Footer() {
                         to="/"
                         className="footer-brand"
                     >
-                        ARTELIER
+                        SKYART
                     </Link>
 
                     <p className="footer-description">
@@ -43,7 +43,7 @@ function Footer() {
 
             <div className="container footer-bottom">
                 <p>
-                    © {new Date().getFullYear()} Artelier
+                    © {new Date().getFullYear()} SKYART. All rights reserved.
                 </p>
 
                 <p>
