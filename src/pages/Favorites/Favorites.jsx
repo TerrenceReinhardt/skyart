@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useEffect } from "react";
 import ArtworkCard from "../../components/ArtworkCard/ArtworkCard";
-import { useFavorites } from "../../context/FavoritesContext";
+import { useFavorites } from "../../context/useFavorites.js";
 
 import "./Favorites.css";
 

@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-import { useFavorites } from "../../context/FavoritesContext";
+import { useFavorites } from "../../context/useFavorites.js";
 import { useEffect } from "react";
 import artworks from "../../data/artworks";
 

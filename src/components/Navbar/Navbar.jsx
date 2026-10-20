@@ -1,6 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router";
 
-import { useFavorites } from "../../context/FavoritesContext";
+import { useFavorites } from "../../context/useFavorites.js";
 
 import "./Navbar.css";
 
