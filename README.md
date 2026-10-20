@@ -28,17 +28,21 @@ The project focuses on modern frontend development practices, including reusable
 | CSS3 | Responsive layouts and visual styling |
 | HTML5 | Semantic page structure |
 
+
 ## Screenshots
 
-Screenshots of the application will be added to showcase its interface and functionality.
+### Homepage
+![SkyArt Homepage](screenshots/home.png)
 
-Suggested screenshots:
+### Explore Artworks
+![Artwork Explorer](screenshots/explore.png)
 
-- Homepage
-- Artwork Explorer
-- Artwork Detail
-- Artist Profiles
-- Favorites Collection
+### Artwork Details
+![Artwork Detail](screenshots/artwork-detail.png)
+
+### Favorites
+![Favorites Collection](screenshots/favorites.png)
+
 
 ## Installation and Setup
 
